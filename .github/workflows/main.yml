@@ -8,11 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: write-all
-    # permissions:
-    #   contents: read
-    #   pages: write
-    #   id-token: write
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
     - name: Checkout code
@@ -26,8 +25,6 @@ jobs:
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
-      with:
-        enablement: true
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
