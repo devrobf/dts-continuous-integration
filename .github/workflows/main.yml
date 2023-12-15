@@ -19,12 +19,14 @@ jobs:
 
     - name: Build the project
       run: sh gradlew build
-      
+
     - name: Generate the static site
       run: sh gradlew run
 
     - name: Setup Pages
       uses: actions/configure-pages@v4
+      with:
+        enablement: true
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v2
